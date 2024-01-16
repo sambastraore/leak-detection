@@ -4,8 +4,29 @@ import Bouton from "../Bouton/Bouton";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
 import { faAddressBook } from "@fortawesome/free-solid-svg-icons";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
+import { auth } from "../../config";
 
 const Regis = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const register_user = (e) => {
+    e.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userInformations) => console.log(userInformations))
+      .catch((error) => console.log(error));
+  };
+
+  function emailChange(event) {
+    setEmail(event.target.value);
+  }
+
+  function passwordChange(event) {
+    setPassword(event.target.value);
+  }
+
   return (
     <div>
       {/* <FontAwesomeIcon icon={faEnvelope} /> */}
@@ -15,7 +36,10 @@ const Regis = () => {
           action=""
           className="formulaire"
           style={{ height: 700, width: 600 }}
+          onSubmit={register_user}
         >
+          <p>{email}</p>
+          <p>{password}</p>
           <header>
             <h1>INSCRIPTION</h1>
             <div className="the-hr">
@@ -39,6 +63,7 @@ const Regis = () => {
               texte_2={"Email"}
               type_1={"number"}
               type_2={"email"}
+              event={emailChange}
             />
             <Test
               icon={faLock}
@@ -47,6 +72,7 @@ const Regis = () => {
               texte_2={"Confirmer mot de passe"}
               type_1={"password"}
               type_2={"password"}
+              event={passwordChange}
             />
 
             <div className="buttonn">

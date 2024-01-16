@@ -4,14 +4,36 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
 import Input from "../input/Input";
 import Bouton from "../Bouton/Bouton";
+import { auth } from "../../config";
+import { signInWithEmailAndPassword } from "firebase/auth";
+
+import { useState } from "react";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  function emailChange(event) {
+    setEmail(event.target.value);
+  }
+
+  function passwordChange(event) {
+    setPassword(event.target.value);
+  }
+
+  const login_user = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userInformations) => console.log(userInformations))
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div>
       {/* <FontAwesomeIcon icon={faEnvelope} /> */}
 
       <div className="corps">
-        <form action="" className="formulaire">
+        <form action="" className="formulaire" onSubmit={login_user}>
           <header>
             <h1>LOG IN</h1>
             <div className="the-hr">
@@ -21,15 +43,17 @@ const Login = () => {
 
           <div className="body-formulaire">
             <Input
-              type={"text"}
+              type={"email"}
               className={"input-1"}
               place_holder={"Saisir votre e-mail"}
               icon={faEnvelope}
               class={"icon-email"}
               color_icon={"#006392"}
               size={"5xs"}
+              event={emailChange}
+              value={email}
             />
-
+            <p>{email}</p>
             <Input
               type={"password"}
               className={"input-1"}
@@ -38,8 +62,10 @@ const Login = () => {
               class={"icon-email"}
               color_icon={"#006392"}
               size={"5xs"}
+              event={passwordChange}
+              value={password}
             />
-
+            <p>{password}</p>
             <div className="buttonn">
               <Bouton class={"boutton"} texte={"Se Connecter"} />
             </div>
