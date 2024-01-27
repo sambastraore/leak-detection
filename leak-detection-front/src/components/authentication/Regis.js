@@ -31,11 +31,11 @@ const Regis = () => {
     <div>
       {/* <FontAwesomeIcon icon={faEnvelope} /> */}
 
-      <div className="corps" style={{ height: 700, width: 600 }}>
+      <div className="corps" style={{ height: 850, width: 600 }}>
         <form
           action=""
           className="formulaire"
-          style={{ height: 700, width: 600 }}
+          style={{ height: 850, width: 600 }}
           onSubmit={register_user}
         >
           <p>{email}</p>
@@ -55,6 +55,7 @@ const Regis = () => {
               texte_2={"Votre nom"}
               type_1={"text"}
               type_2={"text"}
+              display={"none"}
             />
             <Test
               icon={faAddressBook}
@@ -64,15 +65,18 @@ const Regis = () => {
               type_1={"number"}
               type_2={"email"}
               event={emailChange}
+              display={"none"}
             />
             <Test
               icon={faLock}
               icon_color={"#006392"}
               texte_1={"Mot de passe"}
               texte_2={"Confirmer mot de passe"}
+              texte_3={"Matricule Admin"}
               type_1={"password"}
               type_2={"password"}
               event={passwordChange}
+              display={"block"}
             />
 
             <div className="buttonn">

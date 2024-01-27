@@ -2,7 +2,10 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Input = (parametre) => {
   return (
-    <div className={parametre.className}>
+    <div
+      className={parametre.className}
+      style={{ display: parametre.display, marginTop: "20px" }}
+    >
       <input
         type={parametre.type}
         placeholder={parametre.place_holder}
