@@ -34,6 +34,12 @@ public class ServiceResponse {
         super();
     }
 
+    public ServiceResponse(String message, JSONObject data) {
+        super();
+        this.message = message;
+        this.data = data;
+    }
+
 
 
 }

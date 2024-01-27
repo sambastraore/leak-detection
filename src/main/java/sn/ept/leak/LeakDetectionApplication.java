@@ -12,9 +12,11 @@ import java.io.IOException;
 import java.util.Objects;
 import com.google.firebase.FirebaseOptions;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableWebMvc
+@EnableScheduling
 public class LeakDetectionApplication {
 
     public static void main(String[] args)  {

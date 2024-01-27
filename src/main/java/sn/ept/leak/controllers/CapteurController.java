@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import sn.ept.leak.dtos.ServiceResponse;
+import sn.ept.leak.email.EmailService;
 import sn.ept.leak.entities.Capteur;
 import sn.ept.leak.services.CapteurService;
 import org.springframework.http.HttpStatus;
@@ -22,9 +23,13 @@ public class CapteurController {
     @Autowired
     public CapteurService capteurService;
 
+    @Autowired
+    public EmailService emailService;
+
     @GetMapping(value = "/getCapteurs")
     public ResponseEntity<ServiceResponse> getAllCapteurs() throws InterruptedException {
         ServiceResponse response = capteurService.getAllCapteurs();
+        //emailService.sendEmail("diengm@ept.sn","Fuite","Fuite amna woooy");
         return new ResponseEntity<ServiceResponse>(response, new HttpHeaders(), HttpStatus.OK);
 
     }
