@@ -6,12 +6,13 @@ import Input from "../input/Input";
 import Bouton from "../Bouton/Bouton";
 import { auth } from "../../config";
 import { signInWithEmailAndPassword } from "firebase/auth";
-
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   function emailChange(event) {
     setEmail(event.target.value);
@@ -24,8 +25,13 @@ const Login = () => {
   const login_user = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
-      .then((userInformations) => console.log(userInformations))
-      .catch((error) => console.log(error));
+      .then((userInformations) => {
+        console.log(userInformations);
+        navigate("/dashboard");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -76,7 +82,8 @@ const Login = () => {
               Vous n'avez pas de compte ?
             </span>
             <span className="">
-              <a href=""> S'inscrire</a>{" "}
+              {/* <a href=""> S'inscrire</a>  */}
+              <Link to={"/regis"}>S'inscrire</Link>
             </span>
           </div>
         </form>

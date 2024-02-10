@@ -7,15 +7,20 @@ import { faAddressBook } from "@fortawesome/free-solid-svg-icons";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { auth } from "../../config";
+import { Link, useNavigate } from "react-router-dom";
 
 const Regis = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const register_user = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
-      .then((userInformations) => console.log(userInformations))
+      .then((userInformations) => {
+        console.log(userInformations);
+        navigate("/login");
+      })
       .catch((error) => console.log(error));
   };
 
@@ -89,7 +94,8 @@ const Regis = () => {
               Vous avez deja un compte ?
             </span>
             <span className="">
-              <a href=""> Login</a>{" "}
+              {/* <a href=""> Login</a>{" "} */}
+              <Link to={"/login"}>Login</Link>
             </span>
           </div>
         </form>
