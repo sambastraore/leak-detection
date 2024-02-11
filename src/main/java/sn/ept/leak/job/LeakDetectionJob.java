@@ -28,7 +28,7 @@ public class LeakDetectionJob {
     @Autowired
     private CapteurService capteurService;
 
-    @Scheduled(fixedRate = 15000)
+    //@Scheduled(fixedRate = 15000)
     public void executeDetectionAndCreateIncidents() throws ExecutionException, InterruptedException {
         // Penser à comment gérer le cycle de vie des incidents
 
