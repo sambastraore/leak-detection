@@ -9,5 +9,8 @@ public class Capteur {
     public String documentId;
     public boolean normal;
     public double pression;
+    public double latitude;
+    public double longitude;
+    public String region;
 
 }
