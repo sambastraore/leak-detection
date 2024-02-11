@@ -40,6 +40,22 @@ public class CapteurController {
     }
 
 
+        @GetMapping("/getByRegion")
+    public ResponseEntity<ServiceResponse> getCapteursByRegion(@RequestParam String region) throws InterruptedException {
+        ServiceResponse response = capteurService.getCapteursByRegion(region);
+        //emailService.sendEmail("diengm@ept.sn","Fuite","Fuite amna woooy");
+        return new ResponseEntity<ServiceResponse>(response, new HttpHeaders(), HttpStatus.OK);
+
+    }
+
+    @GetMapping("getByTuyau")
+    public ResponseEntity<ServiceResponse> getCapteursByTuyau(@RequestParam int numTuyau) throws InterruptedException {
+        ServiceResponse response = capteurService.getCapteursByTuyau(numTuyau);
+        //emailService.sendEmail("diengm@ept.sn","Fuite","Fuite amna woooy");
+        return new ResponseEntity<ServiceResponse>(response, new HttpHeaders(), HttpStatus.OK);
+
+    }
+
 
 
 }
