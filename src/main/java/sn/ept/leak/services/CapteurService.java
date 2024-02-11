@@ -63,6 +63,71 @@ public class CapteurService {
         return new ServiceResponse("Succès", "Les données de tous les capteurs ont éte obtenus avec succès",count + " Capteurs",obj);
     }
 
+        public ServiceResponse getCapteursByRegion(String region) {
+
+        Firestore dbFireStore = FirestoreClient.getFirestore();
+        Iterable<DocumentReference> documentReference = dbFireStore.collection("capteurs").listDocuments();
+        Iterator<DocumentReference> iterator = documentReference.iterator();
+
+        List<Capteur> capteurDetails = new ArrayList<>();
+        Capteur capteur = null;
+        int count = 0;
+        while(iterator.hasNext()) {
+            count++;
+            DocumentReference documentReference1 = iterator.next();
+            ApiFuture<DocumentSnapshot> future = documentReference1.get();
+            DocumentSnapshot document;
+            try {
+                document = future.get();
+                if (document.exists() && Objects.equals(Objects.requireNonNull(document.toObject(Capteur.class)).region, region)) {
+                    capteur = document.toObject(Capteur.class);
+                    capteurDetails.add(capteur);
+                } else {
+                    return new ServiceResponse("Echec", "Pas de données", null);
+                }
+            } catch (InterruptedException | ExecutionException e) {
+                return new ServiceResponse("Echec", "Une exception est levée", "Error : " + e.getLocalizedMessage());
+            }
+
+        }
+        JSONObject obj = new JSONObject();
+
+        obj.put("capteurs", capteurDetails);
+        return new ServiceResponse("Succès", "Les données de tous les capteurs de " + region + " ont éte obtenus avec succès",count + " Capteurs",obj);
+    }
+
+    public ServiceResponse getCapteursByTuyau(int numTuyau) {
+
+        Firestore dbFireStore = FirestoreClient.getFirestore();
+        Iterable<DocumentReference> documentReference = dbFireStore.collection("capteurs").listDocuments();
+        Iterator<DocumentReference> iterator = documentReference.iterator();
+
+        List<Capteur> capteurDetails = new ArrayList<>();
+        Capteur capteur = null;
+        int count = 0;
+        while(iterator.hasNext()) {
+            count++;
+            DocumentReference documentReference1 = iterator.next();
+            ApiFuture<DocumentSnapshot> future = documentReference1.get();
+            DocumentSnapshot document;
+            try {
+                document = future.get();
+                if (document.exists() &&  LeakDetectionEngine.getTuyauNumero(Objects.requireNonNull(document.toObject(Capteur.class)).getDocumentId()) == numTuyau) {
+                    capteur = document.toObject(Capteur.class);
+                    capteurDetails.add(capteur);
+                } else {
+                    return new ServiceResponse("Echec", "Pas de données", null);
+                }
+            } catch (InterruptedException | ExecutionException e) {
+                return new ServiceResponse("Echec", "Une exception est levée", "Error : " + e.getLocalizedMessage());
+            }
+
+        }
+        JSONObject obj = new JSONObject();
+
+        obj.put("capteurs", capteurDetails);
+        return new ServiceResponse("Succès", "Les données de tous les capteurs du tuyau  " + numTuyau + " ont éte obtenus avec succès",count + " Capteurs",obj);
+    }
 
 
 }
