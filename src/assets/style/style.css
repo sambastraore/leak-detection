@@ -1,0 +1,148 @@
+.corps
+{
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    border: 1px solid #000000;
+    
+    margin-top: 60px;
+    padding: 60px;
+    background-image: url("../img/background.png");
+    background-position: right;
+    
+}
+
+.formulaire
+{
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    
+}
+
+header
+{
+text-align: center;
+
+padding: 10px;
+margin-bottom: 60px;
+
+text-align: center;
+color: #006392;
+}
+.the-hr
+{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.input-1, .input-2
+{
+    text-align: center;
+    
+    margin: 20px;
+    
+    padding: 5px;
+
+   
+
+    /* position: relative; */
+   
+    
+}
+
+input
+{
+    height: 30px;
+    border-bottom: 1px solid #006392;
+     appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: .2em solid #006392;
+	background: white;
+	border-radius: 21px;
+	padding: .2em;
+    text-indent: 10px;
+    width: 200px;
+	/*color: #E91E63; */
+
+}
+input:focus
+{
+    background: #c7c9da52;
+}
+.icon-email
+{
+    position : relative;
+    right: 32px;
+}
+/* background: rgba(#E91E63, .2); background: #9b9ee852; */
+
+
+.buttonn
+{
+    
+   text-align: center;
+   margin-top: 40px;
+   margin-bottom: 50px;
+   
+}
+.boutton
+{
+    padding: 10px;
+    
+    
+    width: 250px;
+    border: none;
+    border-radius: 10px;
+    background-color: #006392 ;
+    color: white;
+    font-size: 20px;
+}
+
+.tail-formulaire
+{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.test
+{
+    
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #006392;
+    padding: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 30px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.test span
+{
+    display: inline-block;
+    
+    border: 1px solid #006392 ;
+    width: 35px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px;
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    z-index: 2;
+    background-color: white;
+}
+.test div
+{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+}
