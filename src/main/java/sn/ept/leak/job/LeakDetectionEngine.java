@@ -67,7 +67,7 @@ public class LeakDetectionEngine {
         }
     }
 
-    private static int getTuyauNumero(String capteurId) {
+    public static int getTuyauNumero(String capteurId) {
         String[] capteurIdParts = capteurId.split("_");
         return Integer.parseInt(capteurIdParts[1].split("\\.")[0]);
     }
