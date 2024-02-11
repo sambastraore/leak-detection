@@ -6,23 +6,48 @@ import { faLock } from "@fortawesome/free-solid-svg-icons";
 import { faAddressBook } from "@fortawesome/free-solid-svg-icons";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
-import { auth } from "../../config";
+import { auth, db, matricule } from "../../config";
 import { Link, useNavigate } from "react-router-dom";
 
 const Regis = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [numero, setNumero] = useState("");
+  const [matriculeUser, setMatriculeUser] = useState("");
   const navigate = useNavigate();
 
   const register_user = (e) => {
     e.preventDefault();
+
+    // first we check if matricule user is equal to matricule
+    if (matriculeUser !== matricule) return;
     createUserWithEmailAndPassword(auth, email, password)
       .then((userInformations) => {
+        // when it'ss succes, we commit change  in the database firestore
+        db.collection("users").add({
+          prenom: firstName,
+          nom: lastName,
+          email: email,
+          numero: numero,
+        });
         console.log(userInformations);
         navigate("/login");
       })
       .catch((error) => console.log(error));
   };
+
+  function firstNameChange(e) {
+    setFirstName(e.target.value);
+  }
+
+  function lastNameChange(e) {
+    setLastName(e.target.value);
+  }
+  function numeroChange(e) {
+    setNumero(e.target.value);
+  }
 
   function emailChange(event) {
     setEmail(event.target.value);
@@ -30,6 +55,10 @@ const Regis = () => {
 
   function passwordChange(event) {
     setPassword(event.target.value);
+  }
+
+  function matriculeChange(event) {
+    setMatriculeUser(event.target.value);
   }
 
   return (
@@ -60,6 +89,8 @@ const Regis = () => {
               texte_2={"Votre nom"}
               type_1={"text"}
               type_2={"text"}
+              event1={firstNameChange}
+              event={lastNameChange}
               display={"none"}
             />
             <Test
@@ -69,6 +100,7 @@ const Regis = () => {
               texte_2={"Email"}
               type_1={"number"}
               type_2={"email"}
+              event1={numeroChange}
               event={emailChange}
               display={"none"}
             />
@@ -79,8 +111,9 @@ const Regis = () => {
               texte_2={"Confirmer mot de passe"}
               texte_3={"Matricule Admin"}
               type_1={"password"}
-              type_2={"password"}
+              type_2={"text"}
               event={passwordChange}
+              event2={matriculeChange}
               display={"block"}
             />
 

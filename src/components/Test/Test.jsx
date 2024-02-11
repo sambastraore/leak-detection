@@ -14,6 +14,7 @@ const Test = (parametre) => {
           display_icon={false}
           place_holder={parametre.texte_1}
           type={parametre.type_1}
+          event={parametre.event1}
         />
         <Input
           display_icon={false}
@@ -26,6 +27,7 @@ const Test = (parametre) => {
           display_icon={false}
           place_holder={parametre.texte_3}
           type={parametre.type_2}
+          event={parametre.event2}
         />
       </div>
     </div>
