@@ -1,0 +1,433 @@
+body {
+  background-color: #f2f8f5;
+}
+
+.tuyau {
+  margin-top: 200px;
+  width: 1200px;
+
+  padding: 50px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.main-tuyau {
+  width: 1050px;
+  height: 202px;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  border-radius: 10px;
+  margin: 0 auto;
+  background-color: rgb(43, 150, 182);
+}
+
+.rondure-gauche {
+  width: 150px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid rgb(150, 137, 137);
+  position: absolute;
+  bottom: 50px;
+  left: 61px;
+  transform: rotateY(125deg);
+}
+
+.rondure-droite {
+  width: 150px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid rgb(150, 137, 137);
+  border-right: 2px dotted black;
+
+  position: absolute;
+  bottom: 50px;
+  right: 60px;
+
+  transform: rotateY(125deg);
+}
+
+.eau {
+  position: absolute;
+  width: 1050px;
+  height: 180px;
+  background-color: rgb(43, 150, 182);
+  left: 120px;
+  bottom: 62px;
+}
+
+.fleche-1 {
+  position: absolute;
+  bottom: 100px;
+  left: 250px;
+  color: white;
+  animation: passageEau 3s infinite;
+}
+
+.fleche-2 {
+  position: absolute;
+  bottom: 150px;
+  left: 250px;
+  color: white;
+  animation: passageEau 3s 2s none infinite;
+}
+
+.fleche-3 {
+  position: absolute;
+  bottom: 125px;
+  left: 250px;
+  color: white;
+  animation: passageEau 3s 4s none infinite;
+}
+.fleche-4 {
+  position: absolute;
+  bottom: 200px;
+  left: 550px;
+  color: white;
+  animation: passageEau 3s 6s none infinite;
+}
+
+.fleche-5 {
+  position: absolute;
+  bottom: 60px;
+  left: 650px;
+  color: white;
+  animation: passageEau 3s 8s none infinite;
+}
+
+@keyframes passageEau {
+  to {
+    left: 1100px;
+  }
+}
+
+.lettre-A {
+  display: none;
+  position: absolute;
+  bottom: 300px;
+  left: 115px;
+}
+
+.lettre-B {
+  display: none;
+  position: absolute;
+  bottom: 253px;
+  left: 300px;
+}
+
+.lettre-C {
+  display: none;
+  position: absolute;
+  bottom: 253px;
+  left: 560px;
+}
+
+.lettre-D {
+  display: none;
+  position: absolute;
+  bottom: 253px;
+  left: 830px;
+}
+
+.lettre-E {
+  display: none;
+  position: absolute;
+  bottom: 253px;
+  left: 1100px;
+}
+.lettre-animation {
+  animation: animationLetter 2s forwards;
+}
+@keyframes animationLetter {
+  from {
+    bottom: 300px;
+  }
+  to {
+    bottom: 253px;
+  }
+}
+
+.pression-A {
+  display: none;
+  position: absolute;
+  left: 110px;
+}
+
+.pression-B {
+  display: none;
+
+  position: absolute;
+  left: 300px;
+}
+
+.pression-C {
+  display: none;
+
+  position: absolute;
+  left: 560px;
+}
+
+.pression-D {
+  display: none;
+
+  position: absolute;
+  left: 830px;
+}
+
+.pression-E {
+  display: none;
+
+  position: absolute;
+  left: 1100px;
+}
+.note {
+  width: 50px;
+  height: 20px;
+  border: 1px solid rgb(83, 73, 73);
+  border-radius: 5px;
+  background-color: white;
+  text-align: center;
+}
+
+.pression-animation {
+  animation: animationPression 2s forwards;
+}
+@keyframes animationPression {
+  from {
+    bottom: -30px;
+  }
+  to {
+    bottom: -8px;
+  }
+}
+
+.perte-de-charge {
+  display: none;
+  font-size: 30px;
+  margin: 0 auto;
+  color: red;
+
+  border: 1px solid black;
+  text-align: center;
+  position: absolute;
+  top: 150px;
+  left: 500px;
+}
+
+.perte-de-charge-animation {
+  animation: perteDechargeAnimation 3s forwards;
+}
+
+@keyframes perteDechargeAnimation {
+  0% {
+    transform: scale(3);
+  }
+  30% {
+    transform: scale(0.5);
+  }
+  60% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+    left: 200px;
+  }
+}
+
+.line {
+  font-size: 20px;
+  text-align: center;
+  display: none;
+  position: absolute;
+  /* border: 1px solid black; */
+  width: 2px;
+  bottom: 140px;
+  left: 180px;
+  color: white;
+}
+.line-animation {
+  animation: lineAnime 5s forwards;
+}
+@keyframes lineAnime {
+  to {
+    width: 939px;
+  }
+}
+
+.line-A-B {
+  position: absolute;
+  width: 185px;
+  left: 140px;
+  bottom: 280px;
+}
+
+.line-B-C {
+  position: absolute;
+  width: 255px;
+  left: 330px;
+  bottom: 280px;
+}
+
+.line-C-D {
+  position: absolute;
+  width: 267px;
+  left: 589px;
+  bottom: 280px;
+}
+
+.line-D-E {
+  position: absolute;
+  width: 265px;
+  left: 860px;
+  bottom: 280px;
+}
+.line-cus {
+  display: none;
+  text-align: center;
+}
+
+.line-cus-animation {
+  animation: linecusanimation 6s forwards;
+}
+
+@keyframes linecusanimation {
+  from {
+    display: none;
+  }
+  to {
+    display: block;
+  }
+}
+
+.line-pa-pb {
+  display: none;
+  position: absolute;
+  bottom: 6px;
+  left: 147px;
+  width: 185px;
+}
+
+.line-pb-pc {
+  display: none;
+  position: absolute;
+  bottom: 6px;
+  left: 336px;
+  width: 256px;
+}
+
+.line-pc-pd {
+  display: none;
+  position: absolute;
+  bottom: 6px;
+  left: 596px;
+  width: 268px;
+}
+
+.line-pd-pe {
+  display: none;
+  position: absolute;
+  bottom: 6px;
+  left: 868px;
+  width: 266px;
+}
+
+.line-cus-p {
+  text-align: center;
+}
+.line-cus-p {
+  font-size: 30px;
+}
+
+.line-cus-p-animation {
+  animation: linecuspanimation 3s forwards;
+}
+
+@keyframes linecuspanimation {
+  from {
+    bottom: -30px;
+  }
+  to {
+    bottom: -20px;
+  }
+}
+
+.tuyau-2 {
+  display: none;
+  position: absolute;
+  width: 150px;
+  height: 300px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  background-color: rgb(43, 150, 182);
+
+  left: 616px;
+  bottom: 252px;
+}
+
+.fleche-1-1 {
+  display: block;
+  position: absolute;
+  bottom: 250px;
+  left: 688px;
+  color: #f2f8f5;
+  animation: animation-arrow-up 2s infinite;
+}
+
+.fleche-2-1 {
+  display: block;
+  position: absolute;
+  bottom: 255px;
+  left: 740px;
+  color: #f2f8f5;
+  animation: animation-arrow-up 2s 1s infinite;
+}
+
+.fleche-3-1 {
+  display: block;
+  position: absolute;
+  bottom: 255px;
+  left: 650px;
+  color: #f2f8f5;
+  animation: animation-arrow-up 2s 1.5s infinite;
+}
+
+@keyframes animation-arrow-up {
+  to {
+    bottom: 600px;
+  }
+}
+
+.support-1 {
+  display: none;
+  width: 150px;
+  height: 200px;
+  border: 1px solid rgba(128, 123, 123, 0.295);
+  position: absolute;
+  bottom: 50px;
+  left: 615px;
+  background-color: rgba(243, 32, 32, 0.39);
+}
+
+.support-2 {
+  display: none;
+  width: 50px;
+  height: 200px;
+  border: 1px solid rgba(128, 123, 123, 0.295);
+  position: absolute;
+  bottom: 50px;
+  left: 955px;
+  background-color: rgba(201, 33, 33, 0.651);
+}
+
+.fuite {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: none;
+  background-color: rgb(43, 150, 182);
+  bottom: 250px;
+  left: 930px;
+  clip-path: polygon(89% 66%, 68% 99%, 31% 99%, 13% 67%);
+}
