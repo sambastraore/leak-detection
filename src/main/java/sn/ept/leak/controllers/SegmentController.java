@@ -24,4 +24,12 @@ public class SegmentController {
         return new ResponseEntity<ServiceResponse>(response, new HttpHeaders(), HttpStatus.OK);
 
     }
+
+    @GetMapping(value = "/getSegments")
+    public ResponseEntity<ServiceResponse> getAllSegments() throws InterruptedException {
+        ServiceResponse response = segmentService.getAllSegments();
+
+        return new ResponseEntity<ServiceResponse>(response, new HttpHeaders(), HttpStatus.OK);
+
+    }
 }
