@@ -5,12 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import sn.ept.leak.dtos.ServiceResponse;
-import sn.ept.leak.entities.Incident;
+import sn.ept.leak.entities.Segment;
 import sn.ept.leak.services.CapteurService;
-import sn.ept.leak.services.IncidentService;
+import sn.ept.leak.services.SegmentService;
 
-import java.sql.Time;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -23,14 +21,13 @@ public class LeakDetectionJob {
     private LeakDetectionEngine leakDetectionEngine;
 
     @Autowired
-    private IncidentService incidentService;
+    private SegmentService segmentService;
 
     @Autowired
     private CapteurService capteurService;
 
     //@Scheduled(fixedRate = 15000)
     public void executeDetectionAndCreateIncidents() throws ExecutionException, InterruptedException {
-        // Penser à comment gérer le cycle de vie des incidents
 
         Double epsilon = 0.1;
         List<String> fuitesDetectees = new ArrayList<>();
@@ -41,24 +38,8 @@ public class LeakDetectionJob {
             fuitesDetectees = (List<String>) data.get("fuitesDetectees");
 
             // Crée un incident pour chaque fuite détectée
-            for (String fuite : fuitesDetectees) {
-                String[] capteurs = fuite.split(" et ");
-                String capteur1Id = capteurs[0];
-                String capteur2Id = capteurs[1];
-
-                // Crée un nouvel objet Incident avec les détails des capteurs et de la fuite
-                Incident incident = new Incident();
-                incident.setId_1(capteur1Id);
-                incident.setId_2(capteur2Id);
-                incident.setPression_1(capteurService.getCapteur(capteur1Id).getPression());
-                incident.setPression_2(capteurService.getCapteur(capteur2Id).getPression());
-                Date creationDate = new Date();
-                incident.setDate(creationDate);
-                incident.setDocumentId(String.valueOf(creationDate).replace(" ","").replace(":",""));
-                //la gravité est à revoir
-                incident.setGravite("moyen");
-                String incidentId = incidentService.createIncident(incident);
-                System.out.println("Incident " + incidentId + " créé  avec succès" );
+            for (String id : fuitesDetectees) {
+                System.out.println("Il y a une fuite sur " + id + "." );
             }
         } else {
             System.out.println("Aucune fuite détectée.");

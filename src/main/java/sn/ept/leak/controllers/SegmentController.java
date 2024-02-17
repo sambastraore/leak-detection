@@ -8,18 +8,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import sn.ept.leak.dtos.ServiceResponse;
-import sn.ept.leak.services.IncidentService;
+import sn.ept.leak.services.SegmentService;
 
 @RestController
 @RequestMapping("/api")
-public class IncidentController {
+public class SegmentController {
 
 
     @Autowired
-    public IncidentService incidentService;
+    public SegmentService segmentService;
     @GetMapping(value = "/getIncidents")
     public ResponseEntity<ServiceResponse> getAllIncidents() throws InterruptedException {
-        ServiceResponse response = incidentService.getAllIncidents();
+        ServiceResponse response = segmentService.getAllIncidents();
+
         return new ResponseEntity<ServiceResponse>(response, new HttpHeaders(), HttpStatus.OK);
 
     }
