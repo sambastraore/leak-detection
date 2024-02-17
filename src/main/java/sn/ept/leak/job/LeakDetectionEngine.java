@@ -58,6 +58,7 @@ public class LeakDetectionEngine {
             else {
                 segment.setFuite(false);
                 segment.setVerification(new Date());
+                segmentService.updateSegment(segment);
             }
 
         }
