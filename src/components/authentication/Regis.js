@@ -98,7 +98,7 @@ const Regis = () => {
               icon_color={"#006392"}
               texte_1={"Numéro"}
               texte_2={"Email"}
-              type_1={"number"}
+              type_1={"text"}
               type_2={"email"}
               event1={numeroChange}
               event={emailChange}

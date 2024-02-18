@@ -78,9 +78,9 @@ const Sidebar = () => {
                 alignItems="center"
                 ml="15px"
               >
-                <Typography variant="h3" color={colors.grey[100]}>
+                {/* <Typography variant="h3" color={colors.grey[100]}>
                   ADMINIS
-                </Typography>
+                </Typography> */}
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
                 </IconButton>
@@ -91,13 +91,13 @@ const Sidebar = () => {
           {!isCollapsed && (
             <Box mb="25px">
               <Box display="flex" justifyContent="center" alignItems="center">
-                <img
+                {/* <img
                   alt="profile-user"
                   width="100px"
                   height="100px"
                   src={`../../assets/user.png`}
                   style={{ cursor: "pointer", borderRadius: "50%" }}
-                />
+                /> */}
               </Box>
               <Box textAlign="center">
                 <Typography
@@ -131,24 +131,11 @@ const Sidebar = () => {
             >
               Data
             </Typography>
-            <Item
-              title="Régions"
-              to="/team"
-              icon={<PeopleOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
+
             <Item
               title="Contacts Utiles"
               to="/contacts"
               icon={<ContactsOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Invoices Balances"
-              to="/invoices"
-              icon={<ReceiptOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
@@ -160,7 +147,7 @@ const Sidebar = () => {
             >
               Pages
             </Typography>
-            
+
             <Item
               title="Profile Form"
               to="/form"
@@ -168,7 +155,7 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            
+
             <Item
               title="FAQ Page"
               to="/faq"
@@ -185,8 +172,8 @@ const Sidebar = () => {
               Charts
             </Typography>
             <Item
-              title="Geography Chart"
-              to="/geography"
+              title="Map"
+              to="/map"
               icon={<MapOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
@@ -212,7 +199,6 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-
           </Box>
         </Menu>
       </ProSidebar>

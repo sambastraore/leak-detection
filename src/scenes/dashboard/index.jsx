@@ -15,21 +15,10 @@ import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
 import SensorsIcon from "@mui/icons-material/Sensors";
-
+import Map from "../../components/Map";
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-
-  const Map = () => {
-    var map = L.map("mymap").setView([14.945923, -16.80831], 13);
-    //setting up a tileset imported from openstreetmap
-    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution: "Thunder Tech Society",
-    }).addTo(map);
-  };
-
-  Map();
 
   return (
     <Box m="20px">
@@ -142,17 +131,17 @@ const Dashboard = () => {
                 $59,342.32
               </Typography> */}
             </Box>
-            <Box>
+            {/* <Box>
               <IconButton>
                 <DownloadOutlinedIcon
                   sx={{ fontSize: "26px", color: colors.greenAccent[500] }}
                 />
               </IconButton>
-            </Box>
+            </Box> */}
           </Box>
           <Box height="250px" m="-20px 0 0 0">
             {/* <LineChart isDashboard={true} /> */}
-            <div id="mymap"></div>
+            <Map />
           </Box>
         </Box>
         <Box
@@ -170,7 +159,7 @@ const Dashboard = () => {
             p="15px"
           >
             <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
-              Recent Transactions
+              Liste des Regions
             </Typography>
           </Box>
           {mockTransactions.map((transaction, i) => (
@@ -188,10 +177,11 @@ const Dashboard = () => {
                   variant="h5"
                   fontWeight="600"
                 >
-                  {transaction.txId}
+                  {/* {transaction.txId} */}
+                  {transaction.user}
                 </Typography>
                 <Typography color={colors.grey[100]}>
-                  {transaction.user}
+                  {/* {transaction.user} */}
                 </Typography>
               </Box>
               <Box color={colors.grey[100]}>{transaction.date}</Box>
@@ -200,7 +190,7 @@ const Dashboard = () => {
                 p="5px 10px"
                 borderRadius="4px"
               >
-                ${transaction.cost}
+                {/* ${transaction.cost} */}
               </Box>
             </Box>
           ))}
@@ -208,7 +198,7 @@ const Dashboard = () => {
 
         {/* ROW 3 */}
         <Box
-          gridColumn="span 4"
+          gridColumn="span 6"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
           p="30px"
@@ -234,7 +224,7 @@ const Dashboard = () => {
           </Box>
         </Box>
         <Box
-          gridColumn="span 4"
+          gridColumn="span 6 "
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
         >
@@ -249,7 +239,7 @@ const Dashboard = () => {
             <BarChart isDashboard={true} />
           </Box>
         </Box>
-        <Box
+        {/* <Box
           gridColumn="span 4"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
@@ -265,7 +255,7 @@ const Dashboard = () => {
           <Box height="200px">
             <GeographyChart isDashboard={true} />
           </Box>
-        </Box>
+        </Box> */}
       </Box>
     </Box>
   );
