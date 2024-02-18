@@ -2,7 +2,9 @@ import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import { mockTransactions } from "../../data/mockData";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import EmailIcon from "@mui/icons-material/Email";
+// import EmailIcon from "@mui/icons-material/Email";
+import TaskAltIcon from "@mui/icons-material/TaskAlt";
+import PinDropIcon from "@mui/icons-material/PinDrop";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import TrafficIcon from "@mui/icons-material/Traffic";
@@ -12,10 +14,22 @@ import GeographyChart from "../../components/GeographyChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
+import SensorsIcon from "@mui/icons-material/Sensors";
 
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
+  const Map = () => {
+    var map = L.map("mymap").setView([14.945923, -16.80831], 13);
+    //setting up a tileset imported from openstreetmap
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 19,
+      attribution: "Thunder Tech Society",
+    }).addTo(map);
+  };
+
+  Map();
 
   return (
     <Box m="20px">
@@ -23,7 +37,7 @@ const Dashboard = () => {
       <Box display="flex" justifyContent="space-between" alignItems="center">
         <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
 
-        <Box>
+        {/* <Box> download report
           <Button
             sx={{
               backgroundColor: colors.blueAccent[700],
@@ -36,7 +50,7 @@ const Dashboard = () => {
             <DownloadOutlinedIcon sx={{ mr: "10px" }} />
             Download Reports
           </Button>
-        </Box>
+        </Box> */}
       </Box>
 
       {/* GRID & CHARTS */}
@@ -48,76 +62,51 @@ const Dashboard = () => {
       >
         {/* ROW 1 */}
         <Box
-          gridColumn="span 3"
+          gridColumn="span 4"
           backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
           justifyContent="center"
         >
           <StatBox
-            title="12,361"
-            subtitle="Emails Sent"
-            progress="0.75"
-            increase="+14%"
+            title="REGION ACTUEL"
+            subtitle="LOUGA"
             icon={
-              <EmailIcon
+              <PinDropIcon
                 sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
               />
             }
           />
         </Box>
         <Box
-          gridColumn="span 3"
+          gridColumn="span 4"
           backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
           justifyContent="center"
         >
           <StatBox
-            title="431,225"
-            subtitle="Sales Obtained"
-            progress="0.50"
-            increase="+21%"
+            title="NOMBRE DE TUYAU"
+            subtitle="215"
             icon={
-              <PointOfSaleIcon
+              <SensorsIcon
                 sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
               />
             }
           />
         </Box>
         <Box
-          gridColumn="span 3"
+          gridColumn="span 4"
           backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
           justifyContent="center"
         >
           <StatBox
-            title="32,441"
-            subtitle="New Clients"
-            progress="0.30"
-            increase="+5%"
+            title="ETAT DU RESEAU"
+            subtitle="STABLE"
             icon={
-              <PersonAddIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box>
-        <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <StatBox
-            title="1,325,134"
-            subtitle="Traffic Received"
-            progress="0.80"
-            increase="+43%"
-            icon={
-              <TrafficIcon
+              <TaskAltIcon
                 sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
               />
             }
@@ -138,7 +127,7 @@ const Dashboard = () => {
             alignItems="center"
           >
             <Box>
-              <Typography
+              {/* <Typography
                 variant="h5"
                 fontWeight="600"
                 color={colors.grey[100]}
@@ -151,7 +140,7 @@ const Dashboard = () => {
                 color={colors.greenAccent[500]}
               >
                 $59,342.32
-              </Typography>
+              </Typography> */}
             </Box>
             <Box>
               <IconButton>
@@ -162,7 +151,8 @@ const Dashboard = () => {
             </Box>
           </Box>
           <Box height="250px" m="-20px 0 0 0">
-            <LineChart isDashboard={true} />
+            {/* <LineChart isDashboard={true} /> */}
+            <div id="mymap"></div>
           </Box>
         </Box>
         <Box
