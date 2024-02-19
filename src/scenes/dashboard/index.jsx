@@ -59,7 +59,7 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="REGION ACTUEL"
+            title="REGION ACTUELLE"
             subtitle="LOUGA"
             icon={
               <PinDropIcon
@@ -76,7 +76,7 @@ const Dashboard = () => {
           justifyContent="center"
         >
           <StatBox
-            title="NOMBRE DE TUYAU"
+            title="NOMBRE DE TUYAUX"
             subtitle="215"
             icon={
               <SensorsIcon
@@ -185,7 +185,6 @@ const Dashboard = () => {
                   {/* {transaction.user} */}
                 </Typography>
               </Box>
-              <Box color={colors.grey[100]}>{transaction.date}</Box>
               <Box
                 backgroundColor={colors.greenAccent[500]}
                 p="5px 10px"

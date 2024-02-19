@@ -8,6 +8,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { auth, db, matricule } from "../../config";
 import { Link, useNavigate } from "react-router-dom";
+import { collection, addDoc } from "firebase/firestore";
 
 const Regis = () => {
   const [email, setEmail] = useState("");
@@ -24,14 +25,16 @@ const Regis = () => {
     // first we check if matricule user is equal to matricule
     if (matriculeUser !== matricule) return;
     createUserWithEmailAndPassword(auth, email, password)
-      .then((userInformations) => {
+      .then( async (userInformations) => {
         // when it'ss succes, we commit change  in the database firestore
-        db.collection("users").add({
+        
+          const docRef  = await addDoc(collection(db, "users"), {
           prenom: firstName,
           nom: lastName,
-          email: email,
-          numero: numero,
-        });
+          numero: numero, 
+          email: email,   
+          });
+        
         console.log(userInformations);
         navigate("/login");
       })
@@ -77,6 +80,7 @@ const Regis = () => {
             <div className="the-hr">
               <hr />
             </div>
+            
           </header>
 
           <div className="body-formulaire">
@@ -122,11 +126,11 @@ const Regis = () => {
 
           <div className="tail-formulaire">
             <span className="not-again-account">
-              Vous avez deja un compte ?
+              Vous avez deja un compte ? 
             </span>
             <span className="">
               {/* <a href=""> Login</a>{" "} */}
-              <Link to={"/login"}>Login</Link>
+              <Link to={"/login"}> Login</Link>
             </span>
           </div>
         </form>
