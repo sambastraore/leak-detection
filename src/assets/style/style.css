@@ -1,149 +1,140 @@
+<<<<<<< HEAD
 body{
     background-color: rgb(222, 254, 244);
+=======
+body {
+  background-color: #f2f5f8;
+>>>>>>> bfe24af49393740e211e161e3a58bfe99734530d
 }
 
-.corps
-{
-    width: 500px;
-    height: 500px;
-    margin: 0 auto;
-    border-radius: 5px;    
-    border-color: #1a3d6f;
-    margin-top: 60px;
-    padding: 60px;
-   /*background-image: url("../img/background.png");*/
-   /* background-position: right;*/
-   background-size: cover;
-    
+.corps {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  border-radius: 5px;
+  border-color: #1a3d6f;
+  margin-top: 60px;
+  padding: 60px;
+  /*background-image: url("../img/background.png");*/
+  /* background-position: right;*/
+  background-size: cover;
 }
 
-.formulaire
-{
-    width: 500px;
-    height: 500px;
-    margin: 0 auto;
-    
-    align-items: center;
-    background-color:#c7c9da52;
-    border-radius: 20px;
-    
+.formulaire {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  /* #c7c9da52;  */
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
-header
-{
-text-align: center;
+header {
+  text-align: center;
 
-padding: 10px;
-margin-bottom: 60px;
+  padding: 10px;
+  margin-bottom: 60px;
 
-text-align: center;
-color: #1a3d6f;
+  text-align: center;
+  color: #1a3d6f;
 }
-.the-hr
-{
-    width: 50%;
-    margin: 0 auto;
+.the-hr {
+  width: 50%;
+  margin: 0 auto;
 }
 
-.input-1, .input-2
-{
-    text-align: center;
-    
-    margin: 20px;
-    
-    padding: 5px;
+.input-1,
+.input-2 {
+  text-align: center;
 
-   
+  margin: 20px;
 
-    /* position: relative; */
-   
-    
+  padding: 5px;
+
+  /* position: relative; */
 }
 
-input
-{
-    height: 30px;
-    border-bottom: 1px solid #1a3d6f;
-     appearance: none;
-	border: none;
-	outline: none;
-	border-bottom: .2em solid #1a3d6f;
-	background: white;
-	border-radius: 21px;
-	padding: .2em;
-    text-indent: 10px;
-    width: 200px;
-	/*color: #E91E63; */
-
+input {
+  height: 30px;
+  border-bottom: 1px solid #1a3d6f;
+  appearance: none;
+  border: none;
+  outline: none;
+  border-bottom: 0.2em solid #1a3d6f;
+  background: white;
+  border-radius: 21px;
+  padding: 0.2em;
+  text-indent: 10px;
+  width: 200px;
+  /*color: #E91E63; */
 }
-input:focus
-{
-    background: #c7c9da52;
+input:focus {
+  background: #c7c9da52;
 }
-.icon-email
-{
-    position : relative;
-    right: 32px;
+.icon-email {
+  position: relative;
+  right: 32px;
 }
 /* background: rgba(#E91E63, .2); background: #9b9ee852; */
 
-
-.buttonn
-{
-    
-   text-align: center;
-   margin-top: 40px;
-   margin-bottom: 50px;
-   
+.buttonn {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 50px;
 }
-.boutton
-{
-    padding: 10px;
-    
-    
-    width: 250px;
-    border: none;
-    border-radius: 10px;
-    background-color: #1a3d6f ;
-    color: white;
-    font-size: 20px;
+.boutton {
+  padding: 10px;
+
+  width: 250px;
+  border: none;
+  border-radius: 10px;
+  background-color: #1a3d6f;
+  color: white;
+  font-size: 20px;
 }
 
-.tail-formulaire
-{
-    text-align: center;
-    margin-bottom: 20px;
+.tail-formulaire {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.test
-{
-    
-    width: 80%;
-    margin: 0 auto;
-    border: 1px solid #1a3d6f;
-    padding: 10px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    margin-top: 30px;
-    position: relative;
-    border-radius: 10px;
+.test {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #1a3d6f;
+  padding: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 30px;
+  position: relative;
+  border-radius: 10px;
 }
 
-.test span
-{
-    display: inline-block;
-    
-    border: 1px solid #1a3d6f ;
-    width: 35px;
-    text-align: center;
-    border-radius: 10px;
-    padding: 5px;
-    position: absolute;
-    top: -20px;
-    left: 20px;
-    z-index: 2;
-    background-color: white;
+.test span {
+  display: inline-block;
+
+  border: 1px solid #1a3d6f;
+  width: 35px;
+  text-align: center;
+  border-radius: 10px;
+  padding: 5px;
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  z-index: 2;
+  background-color: white;
 }
+.test div {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+}
+<<<<<<< HEAD
 .test div
 {
     display: flex;
@@ -157,3 +148,5 @@ input:focus
 .region:hover{
  background-color: aliceblue;
 }
+=======
+>>>>>>> bfe24af49393740e211e161e3a58bfe99734530d

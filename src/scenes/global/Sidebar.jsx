@@ -5,9 +5,7 @@ import { Link } from "react-router-dom";
 import "react-pro-sidebar/dist/css/styles.css";
 import { tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
-import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
@@ -33,8 +31,45 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
     </MenuItem>
   );
 };
+// get all users
+
+// async function getCities(db) {
+//   const userCollection = collection(db, "users");
+//   const userDoc = await getDocs(userCollection);
+//   const userList = userDoc.docs.map((doc) => doc.data());
+//   return userList;
+// }
+//const users = getCities(db);
+// get specified users
+
+// async function getUser(db, email) {
+//   const q = query(collection(db, "users"), where("email", "==", email));
+//   const querySnapshot = await getDocs(q);
+//   //return querySnapshot;
+//   querySnapshot.forEach((doc) => {
+//     // doc.data() is never undefined for query doc snapshots
+//     console.log(doc.id, " => ", doc.data());
+//     // prenom = doc.data().prenom;
+//     console.log(doc.data().prenom);
+//     // return doc.data().prenom;
+
+//     localStorage.setItem("prenom", doc.data().prenom);
+//   });
+// }
+
+// getUser(db, "saliou221@gmail.com");
+
+// user.forEach((doc) => {
+//   // doc.data() is never undefined for query doc snapshots
+//   console.log(doc.data());
+// });
 
 const Sidebar = () => {
+  // const prenom = getUser(db, "saliou221@gmail.com");
+  // useEffect(() => {
+  //   localStorage.setItem("prenom", prenom);
+  //   console.log(prenom);
+  // });
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -109,10 +144,10 @@ const Sidebar = () => {
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  Ed Roh
+                  {localStorage.getItem("prenom")}
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
-                  VP Fancy Admin
+                  Admin
                 </Typography>
               </Box>
             </Box>
