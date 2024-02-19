@@ -74,8 +74,6 @@ const Regis = () => {
           style={{ height: 850, width: 600 }}
           onSubmit={register_user}
         >
-          <p>{email}</p>
-          <p>{password}</p>
           <header>
             <h1>INSCRIPTION</h1>
             <div className="the-hr">
