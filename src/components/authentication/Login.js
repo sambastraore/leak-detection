@@ -8,6 +8,7 @@ import { auth } from "../../config";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import logo from "./logo.jpg";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -42,6 +43,14 @@ const Login = () => {
         <form action="" className="formulaire" onSubmit={login_user}>
           <header>
             <h1>LOG IN</h1>
+            <div className="the-hr" style={{ width: "100px", height: "100px" }}>
+              <img
+                src={logo}
+                alt="logo image"
+                style={{ width: "100%", height: "100%" }}
+              />
+            </div>
+
             <div className="the-hr">
               <hr />
             </div>
