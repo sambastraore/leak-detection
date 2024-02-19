@@ -16,6 +16,7 @@ import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
 import SensorsIcon from "@mui/icons-material/Sensors";
 import Map from "../../components/Map";
+
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);

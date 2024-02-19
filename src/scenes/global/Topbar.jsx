@@ -13,6 +13,7 @@ const Topbar = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
+  const alert = 1;
 
   return (
     <Box display="flex" justifyContent="space-between" p={2}>
@@ -39,6 +40,25 @@ const Topbar = () => {
         </IconButton>
         <IconButton>
           <NotificationsOutlinedIcon />
+          <span
+            style={{
+              color: "red",
+              position: "relative",
+              top: "-7px",
+              left: "-4px",
+              fontSize: "12px",
+              display: "block",
+              width: "20px",
+              height: "20px",
+              borderRadius: "50%",
+              backgroundColor: "white",
+              textAlign: "center",
+              paddingTop: "3px",
+              fontWeight: "bold",
+            }}
+          >
+            {alert}
+          </span>
         </IconButton>
         <IconButton>
           <SettingsOutlinedIcon />
