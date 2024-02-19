@@ -44,20 +44,21 @@ const Topbar = () => {
             style={{
               color: "red",
               position: "relative",
-              top: "-7px",
+              top: "-5px",
               left: "-4px",
-              fontSize: "12px",
+              fontSize: "8px",
               display: "block",
-              width: "20px",
-              height: "20px",
+              width: "10px",
+              height: "10px",
+              paddingBottom: "4px",
               borderRadius: "50%",
-              backgroundColor: "white",
+              backgroundColor: "red",
               textAlign: "center",
               paddingTop: "3px",
               fontWeight: "bold",
             }}
           >
-            {alert}
+            {/*alert*/}
           </span>
         </IconButton>
         <IconButton>

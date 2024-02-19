@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(189, 249, 229);
+    background-color: rgb(222, 254, 244);
 }
 
 .corps
@@ -150,4 +150,10 @@ input:focus
     justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: center;
+}
+
+
+
+.region:hover{
+ background-color: aliceblue;
 }

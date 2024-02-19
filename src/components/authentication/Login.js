@@ -59,7 +59,6 @@ const Login = () => {
               event={emailChange}
               value={email}
             />
-            <p>{email}</p>
             <Input
               type={"password"}
               className={"input-1"}
@@ -71,7 +70,6 @@ const Login = () => {
               event={passwordChange}
               value={password}
             />
-            <p>{password}</p>
             <div className="buttonn">
               <Bouton class={"boutton"} texte={"Se Connecter"} />
             </div>
