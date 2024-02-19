@@ -31,7 +31,8 @@ const Regis = () => {
           const docRef  = await addDoc(collection(db, "users"), {
           prenom: firstName,
           nom: lastName,
-          numero: numero,    
+          numero: numero, 
+          email: email,   
           });
         
         console.log(userInformations);
@@ -79,6 +80,7 @@ const Regis = () => {
             <div className="the-hr">
               <hr />
             </div>
+            
           </header>
 
           <div className="body-formulaire">
@@ -124,11 +126,11 @@ const Regis = () => {
 
           <div className="tail-formulaire">
             <span className="not-again-account">
-              Vous avez deja un compte ?
+              Vous avez deja un compte ? 
             </span>
             <span className="">
               {/* <a href=""> Login</a>{" "} */}
-              <Link to={"/login"}>Login</Link>
+              <Link to={"/login"}> Login</Link>
             </span>
           </div>
         </form>

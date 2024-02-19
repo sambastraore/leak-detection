@@ -1,14 +1,19 @@
+body{
+    background-color: rgb(189, 249, 229);
+}
+
 .corps
 {
     width: 500px;
     height: 500px;
     margin: 0 auto;
-    border: 1px solid #000000;
-    
+    border-radius: 5px;    
+    border-color: #1a3d6f;
     margin-top: 60px;
     padding: 60px;
-    background-image: url("../img/background.png");
-    background-position: right;
+   /*background-image: url("../img/background.png");*/
+   /* background-position: right;*/
+   background-size: cover;
     
 }
 
@@ -19,7 +24,7 @@
     margin: 0 auto;
     
     align-items: center;
-    background-color: white;
+    background-color:#c7c9da52;
     border-radius: 20px;
     
 }
@@ -32,7 +37,7 @@ padding: 10px;
 margin-bottom: 60px;
 
 text-align: center;
-color: #006392;
+color: #1a3d6f;
 }
 .the-hr
 {
@@ -58,11 +63,11 @@ color: #006392;
 input
 {
     height: 30px;
-    border-bottom: 1px solid #006392;
+    border-bottom: 1px solid #1a3d6f;
      appearance: none;
 	border: none;
 	outline: none;
-	border-bottom: .2em solid #006392;
+	border-bottom: .2em solid #1a3d6f;
 	background: white;
 	border-radius: 21px;
 	padding: .2em;
@@ -99,7 +104,7 @@ input:focus
     width: 250px;
     border: none;
     border-radius: 10px;
-    background-color: #006392 ;
+    background-color: #1a3d6f ;
     color: white;
     font-size: 20px;
 }
@@ -115,7 +120,7 @@ input:focus
     
     width: 80%;
     margin: 0 auto;
-    border: 1px solid #006392;
+    border: 1px solid #1a3d6f;
     padding: 10px;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -128,7 +133,7 @@ input:focus
 {
     display: inline-block;
     
-    border: 1px solid #006392 ;
+    border: 1px solid #1a3d6f ;
     width: 35px;
     text-align: center;
     border-radius: 10px;

@@ -88,11 +88,6 @@ const Login = () => {
           </div>
         </form>
       </div>
-      {/* 
-            gardons une trace <div className="input-2">
-              <input type="password" />
-              <span className="icon-password"></span>
-            </div> */}
     </div>
   );
 };
