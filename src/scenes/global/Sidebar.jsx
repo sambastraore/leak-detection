@@ -13,7 +13,6 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
-import logo from "../../assets/img/ourlogo0.png"
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -135,9 +134,7 @@ const Sidebar = () => {
                 /> */}
               </Box>
               <Box textAlign="center" >
-                <div  style={{backgroundColor: "rgba(255,255,255,0.63"}} >
-                <img src={logo} alt="logo" width="100px" height="100px" />
-                </div>
+                
                 <Typography
                   variant="h2"
                   color={colors.grey[100]}

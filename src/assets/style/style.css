@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-body{
-    background-color: rgb(222, 254, 244);
-=======
+
 body {
   background-color: #f2f5f8;
->>>>>>> bfe24af49393740e211e161e3a58bfe99734530d
 }
 
 .corps {
@@ -134,7 +130,6 @@ input:focus {
   flex-wrap: wrap;
   align-items: center;
 }
-<<<<<<< HEAD
 .test div
 {
     display: flex;
@@ -148,5 +143,4 @@ input:focus {
 .region:hover{
  background-color: aliceblue;
 }
-=======
->>>>>>> bfe24af49393740e211e161e3a58bfe99734530d
+

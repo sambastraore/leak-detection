@@ -8,6 +8,8 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
+import logo from "../../assets/img/ourlogo0.png"
+
 
 const Topbar = () => {
   const theme = useTheme();
@@ -18,16 +20,21 @@ const Topbar = () => {
   return (
     <Box display="flex" justifyContent="space-between" p={2}>
       {/* SEARCH BAR */}
+      <div  style={{backgroundColor: "rgba(255,255,255,0.63",display: "flex",justifyContent: "space-around"}} >
+      <img src={logo} alt="logo" width="35px" height="35px" style={{display: "block",marginRight: "20px"}}/>
       <Box
         display="flex"
+        justifyContent="space-between"
         backgroundColor={colors.primary[400]}
         borderRadius="3px"
       >
+        
         <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
         <IconButton type="button" sx={{ p: 1 }}>
           <SearchIcon />
         </IconButton>
       </Box>
+      </div>
 
       {/* ICONS */}
       <Box display="flex">

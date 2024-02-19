@@ -50,6 +50,7 @@ const Login = () => {
       // return doc.data().prenom;
 
       localStorage.setItem("prenom", doc.data().prenom);
+      console.log(doc.data())
     });
   }
 
@@ -86,10 +87,9 @@ const Login = () => {
               event={emailChange}
               value={email}
             />
-<<<<<<< HEAD
-=======
 
->>>>>>> bfe24af49393740e211e161e3a58bfe99734530d
+
+
             <Input
               type={"password"}
               className={"input-1"}
@@ -101,10 +101,9 @@ const Login = () => {
               event={passwordChange}
               value={password}
             />
-<<<<<<< HEAD
-=======
 
->>>>>>> bfe24af49393740e211e161e3a58bfe99734530d
+
+
             <div className="buttonn">
               <Bouton class={"boutton"} texte={"Se Connecter"} />
             </div>
