@@ -1,4 +1,6 @@
-# Leak detection app - backend for water leak detection using springboot and firebase real time database.
+# Leak detection app 
+
+Backend for water leak detection using springboot and firebase real time database.
 
 This projects include some boilerplate code mostly in parts including firebase. 
 
